@@ -1,0 +1,19 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.pdf.bak
+
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Folder for unused/archive files
+unused_files/
+sample/
