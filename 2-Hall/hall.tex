@@ -9,10 +9,8 @@
 \usepackage{amssymb}    % for math symbols
 \usepackage{float}      % for [H] figure placement
 \usepackage{hyperref}   % for links and references
-
+\usepackage{fouriernc}
 \geometry{left=2cm,right=2cm,top=2cm,bottom=2.5cm}
-\linespread{1.2}
-
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -21,7 +19,6 @@
     pdftitle={Lab Report: Hall Effect Experiment},
     pdfpagemode=FullScreen,
 }
-
 \begin{document}
 
 % ------------------- Title / Cover Page -------------------
@@ -257,7 +254,7 @@ The experimental data points, including instrumental error bars ($\delta I = 1\t
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{VH_vs_I_errorbars.pdf}
+    \includegraphics[width=0.8\textwidth]{VH_vs_I_errorbars.pdf}
     \caption{Hall Voltage $V_H$ vs. sample current $I$ for $I_m = 0, 1, 2\text{ A}$, displaying horizontal and vertical error bars.}
     \label{fig:vh_vs_i}
 \end{figure}
@@ -331,7 +328,7 @@ Since the intervals $R_1$, $R_2$, and $R_3$ do not overlap, we conclude that the
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Vx_vs_I_errorbars.pdf}
+    \includegraphics[width=0.8\textwidth]{Vx_vs_I_errorbars.pdf}
     \caption{Longitudinal Voltage $V_x$ vs. sample current $I$ with OLS fits and error bars.}
     \label{fig:vx_vs_i}
 \end{figure}
@@ -365,7 +362,7 @@ An OLS fit of the calibration curve shown in Fig.~\ref{fig:b_vs_im} yields:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{B_vs_Im_errorbars.pdf}
+    \includegraphics[width=0.8\textwidth]{B_vs_Im_errorbars.pdf}
     \caption{Electromagnet calibration curve with OLS line of best fit and calculated error bars.}
     \label{fig:b_vs_im}
 \end{figure}
@@ -420,7 +417,7 @@ Using the sample standard deviation for the three independent calculations, the 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Vx_vs_VH_errorbars.pdf}
+    \includegraphics[width=0.8\textwidth]{Vx_vs_VH_errorbars.pdf}
     \caption{Longitudinal Voltage $V_x$ vs. Hall Voltage $V_H$ with OLS fits and error bars.}
     \label{fig:vx_vs_vh}
 \end{figure}
