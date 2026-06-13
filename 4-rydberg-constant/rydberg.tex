@@ -1,0 +1,302 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{booktabs}   % for professional table rules
+\usepackage{caption}    % for customizing captions
+\usepackage{array}      % for better column formatting
+\usepackage{siunitx}    % for consistent units
+\usepackage{graphicx}   % for importing figures
+\usepackage{geometry}   % for page margins
+\usepackage{amsmath}    % for math alignment
+\usepackage{amssymb}    % for math symbols
+\usepackage{float}      % for [H] figure placement
+\usepackage{hyperref}   % for links and references
+\usepackage{multirow}   % for multirow in tables
+\usepackage{fouriernc}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2.5cm}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Lab Report: Measurement of the Rydberg Constant},
+    pdfpagemode=FullScreen,
+}
+
+\begin{document}
+
+% ------------------- Title / Cover Page -------------------
+\noindent
+\begin{center}
+    \includegraphics[width=0.25\textwidth]{sut.jpg} \\
+    \vspace{2pt}
+\end{center}
+\begin{center}
+    {\LARGE \bf Department of Physics} \\
+    \vspace{2pt}
+    {\Large \bf Sharif University of Technology} \\
+    \vspace{8pt}
+    {\large \bf Physics Lab IV --- General Physics Laboratory} \\
+    \vspace{4pt}
+    \hrule
+    \vspace{6pt}
+    {\Large \bf Experiment Report: Measurement of the Rydberg Constant}
+\end{center}
+\hrule
+\vspace{0.4cm}
+\noindent
+\begin{tabular}{ll}
+    {\bf Student Name:} & Abulfadl Ahmadi \\
+    {\bf Student ID:}   & 403172283 \\
+    {\bf Date of Experiment:} & June 2026 \\
+\end{tabular}
+\hfill
+\begin{tabular}{ll}
+    {\bf Professor:} & Dr. Khademi \\
+    {\bf Teaching Assistants:} & Yasin Amiri \\
+    & Sonia \\
+\end{tabular}
+
+\vspace{0.6cm}
+
+% ------------------- Abstract -------------------
+\begin{abstract}
+In this experiment, the emission spectrum of a hydrogen atom is analyzed to determine the fundamental Rydberg constant ($R_\infty$). A diffraction grating spectrometer is first calibrated using the known spectral lines of a multi-wavelength lamp (Sodium/Mercury) to calculate the grating constant, yielding $d = 16487.8 \pm 30.4\ \text{\AA}$ and a grating density of $N = 606.5 \pm 1.1\ \text{lines/mm}$. Subsequently, the Balmer series emission lines of a hydrogen discharge lamp are observed. The measured diffraction angles are used to calculate the emitted wavelengths, and through rigorous error propagation via partial derivatives, the Rydberg constant is determined to be $R_\infty = (1.0907 \pm 0.0021) \times 10^7\ \text{m}^{-1}$. This result is in excellent agreement with the theoretical value, showing a relative error of only $0.608\%$. Additionally, the high-resolution capabilities of the grating are demonstrated by resolving the Sodium D-lines doublet, measuring a wavelength splitting of $\Delta\lambda = 6.04 \pm 15.43\ \text{\AA}$.
+\end{abstract}
+
+% ------------------- Section 1: Objectives -------------------
+\section{Objectives}
+The primary objectives of this experiment are:
+\begin{enumerate}
+    \item To study the discrete emission spectrum of the hydrogen atom and observe the visible Balmer series.
+    \item To calibrate a diffraction grating using known spectral lines to determine its exact grating constant ($d$).
+    \item To calculate the Rydberg constant ($R_\infty$) experimentally and perform comprehensive standard error propagation based on instrumental uncertainties.
+    \item To resolve fine structure spectral lines, specifically the Sodium doublet, by utilizing higher-order diffraction.
+\end{enumerate}
+
+% ------------------- Section 2: Theoretical Background -------------------
+\section{Theoretical Background}
+The hydrogen atom, consisting of a single proton and an electron, is the simplest quantum mechanical system. Early classical models could not explain the discrete line spectra observed from hydrogen gas. In 1913, Niels Bohr proposed a quantum model based on two main postulates:
+\begin{enumerate}
+    \item The electron moves in circular orbits around the nucleus without radiating energy, and its orbital angular momentum is quantized as an integer multiple of $\hbar = \frac{h}{2\pi}$:
+    \begin{equation}
+        L = m v r = n \hbar
+    \end{equation}
+    where $n = 1, 2, 3, \dots$ is the principal quantum number.
+    \item Radiation is emitted or absorbed only when the electron transitions between these discrete stationary orbits. The energy of the emitted photon equals the energy difference between the initial state $E_i$ and the final state $E_f$:
+    \begin{equation}
+        h \nu = E_i - E_f
+    \end{equation}
+\end{enumerate}
+
+By equating the centripetal force to the Coulomb electrostatic attraction:
+\begin{equation}
+    \frac{m v^2}{r} = \frac{1}{4\pi\varepsilon_0} \frac{e^2}{r^2}
+\end{equation}
+one can solve for the total energy of the $n$-th orbital level. The generalized formula for the energy transitions and the resulting wavelength $\lambda$ of the emitted photon is given by the Rydberg formula:
+\begin{equation}
+    \frac{1}{\lambda} = R_\infty \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right)
+\end{equation}
+where $n_f$ is the final energy level, $n_i$ is the initial energy level ($n_i > n_f$), and $R_\infty$ is the Rydberg constant. For hydrogen transitions terminating at $n_f = 2$, the emitted photons fall in the visible light spectrum, forming the \textbf{Balmer series}.
+
+To measure the wavelength of the emitted light accurately, a diffraction grating spectrometer is used. When a plane light wave is incident on a grating with slit spacing $d$, constructive interference occurs at specific angles $\theta$ according to the grating equation:
+\begin{equation}
+    d (\sin\theta_k - \sin\theta_i) = m \lambda
+\end{equation}
+where $m$ is the diffraction order. If the incident light is normal to the grating ($\theta_i = 0$), the equation simplifies to:
+\begin{equation}
+    d \sin\theta_k = m \lambda
+\end{equation}
+By measuring the diffraction angle $\theta_k$ for a known wavelength, we can calculate $d$. Once $d$ is calibrated, we can precisely determine the unknown wavelengths of the hydrogen Balmer lines.
+
+% ------------------- Section 3: Experimental Setup & Uncertainties -------------------
+\section{Experimental Setup \& Instrumental Uncertainties}
+The experimental apparatus consists of an optical spectrometer equipped with a collimator, a rotatable telescope, and a central rotating platform holding the diffraction grating. The light sources include a multi-wavelength calibration lamp (containing spectral lines like Sodium and Mercury) and a pure Hydrogen discharge lamp.
+
+The procedure involves:
+\begin{enumerate}
+    \item Adjusting the telescope and collimator for parallel rays (focusing at infinity).
+    \item Ensuring the diffraction grating is perfectly perpendicular to the incident beam.
+    \item Measuring the diffraction angles $\theta$ for the known calibration lines (Red, Yellow, Green) to determine the grating constant $d$.
+    \item Replacing the lamp with the Hydrogen source and measuring the angles for the four visible Balmer lines: Violet ($n_i=6$), Blue ($n_i=5$), Green ($n_i=4$), and Red ($n_i=3$).
+\end{enumerate}
+
+The absolute instrumental error (precision limit) for the angular reading on the spectrometer vernier scale is defined as:
+\begin{itemize}
+    \item Angular uncertainty: $\delta\theta = 0.01^\circ = 1.745 \times 10^{-4}\text{ rad}$
+\end{itemize}
+This error propagates through the trigonometric calculations and affects the final precision of $\lambda$ and $R_\infty$.
+
+% ------------------- Section 4: Experimental Data & Analysis -------------------
+\section{Experimental Data, Regressions \& Error Propagation}
+
+\subsection{Grating Calibration}
+The first step is to calibrate the diffraction grating by finding $d$ using known spectral wavelengths. All measurements in this phase were taken at the first diffraction order ($m=1$).
+The slit spacing is calculated as $d = \frac{\lambda}{\sin\theta}$. The partial derivative with respect to $\theta$ is:
+\begin{equation}
+    \delta d = \left| \frac{\partial d}{\partial \theta} \right| \delta\theta = d |\cot\theta| \delta\theta
+\end{equation}
+
+Table~\ref{tab:calibration} summarizes the measured angles, the calculated $d$ values, and the corresponding grating density $N = \frac{1}{d}$.
+
+\begin{table}[H]
+\centering
+\caption{Calibration of the diffraction grating using spectral lines of known wavelength.}
+\label{tab:calibration}
+\begin{tabular}{lcccccc}
+\toprule
+Colour & $\lambda$ (\AA) & $\theta$ ($^\circ$) & $\sin\theta$ & Order ($m$) & $d$ (\AA) & $N$ (lines/mm) \\
+\midrule
+Red & 6154.4 & 21.89 & 0.3728 & 1 & $16507.4 \pm 7.2$ & $605.8$ \\
+Yellow & 5890.0 & 21.01 & 0.3585 & 1 & $16428.2 \pm 7.5$ & $608.7$ \\
+Green & 5682.7 & 20.11 & 0.3438 & 1 & $16528.0 \pm 7.9$ & $605.0$ \\
+\midrule
+\multicolumn{5}{l}{\textbf{Average}} & $\mathbf{16487.8 \pm 30.4}$ & $\mathbf{606.5 \pm 1.1}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The average grating constant is found to be $\bar{d} = 16487.8 \pm 30.4\ \text{\AA}$.
+
+\subsection{Calculation of the Rydberg Constant}
+With the calibrated $\bar{d}$, the hydrogen spectrum is analyzed. The wavelength is given by $\lambda = \bar{d} \sin\theta$. The propagated error for the wavelength is:
+\begin{equation}
+    \delta\lambda = \sqrt{ \left( \sin\theta \cdot \delta\bar{d} \right)^2 + \left( \bar{d} \cos\theta \cdot \delta\theta \right)^2 }
+\end{equation}
+The Rydberg constant for each line is then:
+\begin{equation}
+    R_\infty = \frac{1}{\lambda \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right)}
+\end{equation}
+with uncertainty:
+\begin{equation}
+    \delta R_\infty = R_\infty \left( \frac{\delta\lambda}{\lambda} \right)
+\end{equation}
+The results for the Balmer series ($n_f = 2$) are presented in Table~\ref{tab:hydrogen}.
+
+\begin{table}[H]
+\centering
+\caption{Experimental data for the Hydrogen Balmer series and the calculated Rydberg constant.}
+\label{tab:hydrogen}
+\begin{tabular}{lcccccc}
+\toprule
+Colour & $n_i \to n_f$ & $\theta$ ($^\circ$) & $\lambda$ (\AA) & $\delta\lambda$ (\AA) & $R_\infty$ ($10^7$ m$^{-1}$) \\
+\midrule
+Violet & $6\to 2$ & 14.41 & 4103.15 & 8.07 & $1.0967 \pm 0.0022$ \\
+Blue & $5\to 2$ & 15.37 & 4370.13 & 8.53 & $1.0896 \pm 0.0021$ \\
+Green & $4\to 2$ & 17.32 & 4908.57 & 9.47 & $1.0865 \pm 0.0021$ \\
+Red & $3\to 2$ & 23.62 & 6606.17 & 12.47 & $1.0899 \pm 0.0021$ \\
+\midrule
+\multicolumn{5}{l}{\textbf{Average $R_\infty$}} & $\mathbf{1.0907 \pm 0.0021}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The final experimental value is $\bar{R}_\infty = (1.0907 \pm 0.0021) \times 10^7\ \text{m}^{-1}$. Comparing this to the accepted theoretical value of $1.097373 \times 10^7\ \text{m}^{-1}$, the relative error is:
+\begin{equation}
+    \text{Relative Error} = \frac{|1.0907 - 1.0973|}{1.0973} \times 100 \approx 0.608\%
+\end{equation}
+
+\subsection{Resolution of the Sodium Doublet}
+In the second diffraction order ($m=2$), the high resolving power of the grating allows us to distinguish the Sodium D-lines doublet, which arises from fine-structure spin-orbit coupling. The data is shown in Table~\ref{tab:doublet}.
+
+\begin{table}[H]
+\centering
+\caption{Resolution of the Sodium D-lines doublet ($m=2$).}
+\label{tab:doublet}
+\begin{tabular}{lcccc}
+\toprule
+Line & $\theta$ ($^\circ$) & $m$ (Order) & $\lambda$ (\AA) & $\Delta\lambda$ (\AA) \\
+\midrule
+$D_1$ & 45.55 & 2 & $5885.02 \pm 10.91$ & \multirow{2}{*}{$6.04 \pm 15.43$} \\
+$D_2$ & 45.61 & 2 & $5891.07 \pm 10.92$ & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The measured wavelength splitting is $\Delta\lambda = 6.04\ \text{\AA}$, which is in excellent agreement with the theoretical gap between the $5895.9\ \text{\AA}$ and $5889.9\ \text{\AA}$ lines ($\approx 6\ \text{\AA}$).
+
+% ------------------- Section 5: Answers to Questions -------------------
+\section{Answers to Post-Lab Questions}
+
+\subsection*{Q1: Calculate the average $d$ and its error. Through it, calculate the number of lines per millimeter and compare it with the registered value on the grating.}
+As calculated in Section 4.1, the average grating constant is $\bar{d} = 16487.8 \pm 30.4\ \text{\AA}$. Converting this to grating density yields $N = \frac{10^7}{\bar{d}} = 606.5 \pm 1.1\ \text{lines/mm}$. Commercial diffraction gratings used in such educational setups are typically rated at nominally $600\ \text{lines/mm}$. Our experimental result is extremely close to this expected value, with a minimal deviation of approximately $1\%$.
+
+\subsection*{Q2: The yellow spectrum of the sodium lamp resolves into two lines in the second order. Measure the angle difference between these two and calculate their wavelength difference.}
+As shown in Table~\ref{tab:doublet}, at diffraction order $m=2$, the two sodium lines are observed at $\theta = 45.55^\circ$ and $\theta = 45.61^\circ$. Using the calibrated $\bar{d}$, the wavelengths are found to be $\lambda_1 = 5885.02\ \text{\AA}$ and $\lambda_2 = 5891.07\ \text{\AA}$. The calculated wavelength difference is $\Delta\lambda = 6.04 \pm 15.43\ \text{\AA}$. This confirms the observation of the Sodium fine structure $D_1$ and $D_2$ doublet.
+
+\subsection*{Q3: Using $\bar{d}$, calculate the Rydberg constant and compare it with the theoretical value.}
+The calculated experimental Rydberg constant, averaged over the four visible Balmer lines, is $R_\infty = (1.0907 \pm 0.0021) \times 10^7\ \text{m}^{-1}$. The widely accepted theoretical value is $1.097373 \times 10^7\ \text{m}^{-1}$. The measurement is highly accurate, producing a relative error of only $0.608\%$.
+
+\subsection*{Q4: Determine the total error of the experiment and specify the causes of error.}
+The total relative error for $R_\infty$ compared to the theoretical value is $0.608\%$. However, the propagated instrumental uncertainty yields an internal statistical error of $\pm 0.0021 \times 10^7\ \text{m}^{-1}$.
+The primary sources of experimental error include:
+\begin{enumerate}
+    \item \textbf{Instrumental Limits:} The vernier scale limits the angular reading precision to $\delta\theta = 0.01^\circ$, which propagates significantly given the trigonometric relationships.
+    \item \textbf{Alignment Errors:} If the incident beam from the collimator is not perfectly normal (perpendicular) to the grating surface ($\theta_i \neq 0$), an asymmetric systematic offset is introduced to all diffraction angles.
+    \item \textbf{Visual Acuity:} Accurately aligning the telescope reticle crosshair perfectly with the center of the diffracted spectral line is subjective and depends on human visual resolution.
+\end{enumerate}
+
+\subsection*{Q5: Given the energy of the second level $E_2 = -3.4\text{ eV}$ for the hydrogen atom, calculate the energy of the other levels.}
+According to the Bohr model, the energy of the $n$-th level is inversely proportional to $n^2$: $E_n = \frac{E_1}{n^2}$.
+Given $E_2 = -3.4\text{ eV}$, we can find the ground state energy $E_1$:
+\begin{equation}
+    E_2 = \frac{E_1}{2^2} \implies E_1 = 4 \times (-3.4) = -13.6\text{ eV}
+\end{equation}
+Thus, the energies of the subsequent levels are:
+\begin{itemize}
+    \item $E_3 = -13.6 / 9 = -1.51\text{ eV}$
+    \item $E_4 = -13.6 / 16 = -0.85\text{ eV}$
+    \item $E_5 = -13.6 / 25 = -0.54\text{ eV}$
+    \item $E_6 = -13.6 / 36 = -0.38\text{ eV}$
+\end{itemize}
+
+\subsection*{Q6: What is the series for transitions to $n_f = 3$ called and what wavelengths are obtained for it? Is the resulting light visible?}
+The series corresponding to electron transitions terminating at the third energy level ($n_f = 3$) is called the \textbf{Paschen series}.
+Using the Rydberg formula, the wavelengths are calculated as:
+\begin{itemize}
+    \item For $n_i = 4$: $\lambda = 1875\text{ nm}$
+    \item For $n_i = 5$: $\lambda = 1282\text{ nm}$
+    \item For $n_i = 6$: $\lambda = 1094\text{ nm}$
+\end{itemize}
+Since all these wavelengths are substantially larger than $700\text{ nm}$, they fall entirely within the \textbf{Infrared (IR)} region of the electromagnetic spectrum. Therefore, the resulting light is \textbf{not visible} to the human eye.
+
+\subsection*{Q7: Prove $d(\sin\theta_k - \sin\theta_i) = m\lambda$.}
+Consider a plane wave of light incident on a grating with slit separation $d$ at an angle $\theta_i$ relative to the normal. The light diffracts at an angle $\theta_k$. For constructive interference to occur, the total optical path length difference ($\Delta x$) between rays from adjacent slits must be an integer multiple of the wavelength ($m\lambda$).
+From simple geometry, the path difference consists of two parts:
+1. The extra distance the ray travels before hitting the slit: $\Delta x_{in} = d \sin(-\theta_i) = -d\sin\theta_i$ (assuming $\theta_i$ and $\theta_k$ are on the same side of the normal).
+2. The extra distance the ray travels after leaving the slit: $\Delta x_{out} = d \sin\theta_k$.
+The total path difference is:
+\begin{equation}
+    \Delta x = \Delta x_{out} + \Delta x_{in} = d \sin\theta_k - d \sin\theta_i
+\end{equation}
+Setting this equal to the condition for constructive maxima yields the grating equation:
+\begin{equation}
+    d(\sin\theta_k - \sin\theta_i) = m\lambda
+\end{equation}
+
+\subsection*{Q8: If the diffraction grating has $600\text{ slits/mm}$, at what angles in the telescope will the sodium wavelengths $6154.3$, $5800$, and $5682.2\text{ \AA}$ be observed for the first and second orders?}
+A grating density of $600\text{ lines/mm}$ implies a slit spacing of $d = \frac{1}{600}\text{ mm} = 1.6667 \times 10^{-6}\text{ m} = 16666.67\text{ \AA}$. Assuming normal incidence ($\theta_i = 0$), the formula is $\sin\theta = \frac{m\lambda}{d}$.
+
+\textbf{For First Order ($m=1$):}
+\begin{itemize}
+    \item $\lambda = 5682.2\text{ \AA} \implies \sin\theta = 0.3409 \implies \theta = 19.93^\circ$
+    \item $\lambda = 5800.0\text{ \AA} \implies \sin\theta = 0.3480 \implies \theta = 20.37^\circ$
+    \item $\lambda = 6154.3\text{ \AA} \implies \sin\theta = 0.3693 \implies \theta = 21.67^\circ$
+\end{itemize}
+
+\textbf{For Second Order ($m=2$):}
+\begin{itemize}
+    \item $\lambda = 5682.2\text{ \AA} \implies \sin\theta = 0.6819 \implies \theta = 42.99^\circ$
+    \item $\lambda = 5800.0\text{ \AA} \implies \sin\theta = 0.6960 \implies \theta = 44.11^\circ$
+    \item $\lambda = 6154.3\text{ \AA} \implies \sin\theta = 0.7385 \implies \theta = 47.60^\circ$
+\end{itemize}
+
+\subsection*{Q9: How is this experiment used to determine the type of materials?}
+Because energy levels in atoms are strictly quantized ($E_n$), the allowable energy transitions ($\Delta E$) and their corresponding emitted photon wavelengths ($\lambda = \frac{hc}{\Delta E}$) are unique to each specific element. This set of wavelengths acts as a unique atomic "fingerprint." By using a spectrometer to measure the emission lines of an unknown sample and comparing them against known reference spectra, one can accurately identify the elemental composition of the material—a technique known as atomic emission spectroscopy.
+
+\subsection*{Q10: Explain what the Rydberg constant is and what is the importance of its measurement?}
+The Rydberg constant ($R_\infty$) is a fundamental physical constant that represents the limiting value of the highest wavenumber (inverse wavelength) of any photon that can be emitted by the hydrogen atom. Theoretically, it encapsulates several other fundamental constants:
+\begin{equation}
+    R_\infty = \frac{m_e e^4}{8 \varepsilon_0^2 h^3 c}
+\end{equation}
+Measuring it is of profound historical and practical importance. Historically, its precise empirical measurement validated the Bohr model of the atom and the quantization of energy, serving as a cornerstone for the development of quantum mechanics. Today, because it can be measured spectroscopically to extremely high precision, it is used to refine and test the consistency of other fundamental constants and the theories of Quantum Electrodynamics (QED).
+
+\end{document}
