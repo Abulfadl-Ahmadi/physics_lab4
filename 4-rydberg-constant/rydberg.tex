@@ -59,7 +59,7 @@
 
 % ------------------- Abstract -------------------
 \begin{abstract}
-In this experiment, the emission spectrum of a hydrogen atom is analyzed to determine the fundamental Rydberg constant ($R_\infty$). A diffraction grating spectrometer is first calibrated using the known spectral lines of a multi-wavelength lamp (Sodium/Mercury) to calculate the grating constant, yielding $d = 16487.8 \pm 30.4\ \text{\AA}$ and a grating density of $N = 606.5 \pm 1.1\ \text{lines/mm}$. Subsequently, the Balmer series emission lines of a hydrogen discharge lamp are observed. The measured diffraction angles are used to calculate the emitted wavelengths, and through rigorous error propagation via partial derivatives, the Rydberg constant is determined to be $R_\infty = (1.0907 \pm 0.0021) \times 10^7\ \text{m}^{-1}$. This result is in excellent agreement with the theoretical value, showing a relative error of only $0.608\%$. Additionally, the high-resolution capabilities of the grating are demonstrated by resolving the Sodium D-lines doublet, measuring a wavelength splitting of $\Delta\lambda = 6.04 \pm 15.43\ \text{\AA}$.
+In this experiment, the emission spectrum of a hydrogen atom is analyzed to determine the fundamental Rydberg constant ($R_\infty$). A diffraction grating spectrometer is first calibrated using the known spectral lines of a multi-wavelength lamp (Sodium/Mercury) to calculate the grating constant, yielding $d = 16487.8 \pm 30.4\ \text{\AA}$ and a grating density of $N = 606.5 \pm 1.1\ \text{lines/mm}$. Subsequently, the Balmer series emission lines of a hydrogen discharge lamp are observed. The measured diffraction angles are used to calculate the emitted wavelengths, and through rigorous error propagation via partial derivatives, the Rydberg constant is determined to be $R_\infty = (1.0907 \pm 0.0021) \times 10^7\ \text{m}^{-1}$. This result is in excellent agreement with the theoretical value, showing a relative error of only $0.608\%$. Additionally, the high-resolution capabilities of the grating are demonstrated by resolving the Sodium D-lines doublet, measuring a wavelength splitting of $\Delta\lambda = 6.04 \pm 15.55\ \text{\AA}$.
 \end{abstract}
 
 % ------------------- Section 1: Objectives -------------------
@@ -119,9 +119,9 @@ The procedure involves:
     \item Replacing the lamp with the Hydrogen source and measuring the angles for the four visible Balmer lines: Violet ($n_i=6$), Blue ($n_i=5$), Green ($n_i=4$), and Red ($n_i=3$).
 \end{enumerate}
 
-The absolute instrumental error (precision limit) for the angular reading on the spectrometer vernier scale is defined as:
+The absolute instrumental error (precision limit) for the angular reading on the spectrometer vernier scale is 1 arcminute:
 \begin{itemize}
-    \item Angular uncertainty: $\delta\theta = 0.01^\circ = 1.745 \times 10^{-4}\text{ rad}$
+    \item Angular uncertainty: $\delta\theta = 1' = \left(\frac{1}{60}\right)^\circ \approx 0.0167^\circ = 2.909 \times 10^{-4}\text{ rad}$
 \end{itemize}
 This error propagates through the trigonometric calculations and affects the final precision of $\lambda$ and $R_\infty$.
 
@@ -145,9 +145,9 @@ Table~\ref{tab:calibration} summarizes the measured angles, the calculated $d$ v
 \toprule
 Colour & $\lambda$ (\AA) & $\theta$ ($^\circ$) & $\sin\theta$ & Order ($m$) & $d$ (\AA) & $N$ (lines/mm) \\
 \midrule
-Red & 6154.4 & 21.89 & 0.3728 & 1 & $16507.4 \pm 7.2$ & $605.8$ \\
-Yellow & 5890.0 & 21.01 & 0.3585 & 1 & $16428.2 \pm 7.5$ & $608.7$ \\
-Green & 5682.7 & 20.11 & 0.3438 & 1 & $16528.0 \pm 7.9$ & $605.0$ \\
+Red & 6154.4 & 21.89 & 0.3728 & 1 & $16507.4 \pm 12.0$ & $605.8$ \\
+Yellow & 5890.0 & 21.01 & 0.3585 & 1 & $16428.2 \pm 12.4$ & $608.7$ \\
+Green & 5682.7 & 20.11 & 0.3438 & 1 & $16528.0 \pm 13.1$ & $605.0$ \\
 \midrule
 \multicolumn{5}{l}{\textbf{Average}} & $\mathbf{16487.8 \pm 30.4}$ & $\mathbf{606.5 \pm 1.1}$ \\
 \bottomrule
@@ -179,10 +179,10 @@ The results for the Balmer series ($n_f = 2$) are presented in Table~\ref{tab:hy
 \toprule
 Colour & $n_i \to n_f$ & $\theta$ ($^\circ$) & $\lambda$ (\AA) & $\delta\lambda$ (\AA) & $R_\infty$ ($10^7$ m$^{-1}$) \\
 \midrule
-Violet & $6\to 2$ & 14.41 & 4103.15 & 8.07 & $1.0967 \pm 0.0022$ \\
-Blue & $5\to 2$ & 15.37 & 4370.13 & 8.53 & $1.0896 \pm 0.0021$ \\
-Green & $4\to 2$ & 17.32 & 4908.57 & 9.47 & $1.0865 \pm 0.0021$ \\
-Red & $3\to 2$ & 23.62 & 6606.17 & 12.47 & $1.0899 \pm 0.0021$ \\
+Violet & 6$\to 2$ & 14.41 & 4103.15 & 8.88 & $1.0967 \pm 0.0024$ \\
+Blue & 5$\to 2$ & 15.37 & 4370.13 & 9.30 & $1.0896 \pm 0.0023$ \\
+Green & 4$\to 2$ & 17.32 & 4908.57 & 10.15 & $1.0865 \pm 0.0022$ \\
+Red & 3$\to 2$ & 23.62 & 6606.17 & 12.96 & $1.0899 \pm 0.0021$ \\
 \midrule
 \multicolumn{5}{l}{\textbf{Average $R_\infty$}} & $\mathbf{1.0907 \pm 0.0021}$ \\
 \bottomrule
@@ -205,8 +205,8 @@ In the second diffraction order ($m=2$), the high resolving power of the grating
 \toprule
 Line & $\theta$ ($^\circ$) & $m$ (Order) & $\lambda$ (\AA) & $\Delta\lambda$ (\AA) \\
 \midrule
-$D_1$ & 45.55 & 2 & $5885.02 \pm 10.91$ & \multirow{2}{*}{$6.04 \pm 15.43$} \\
-$D_2$ & 45.61 & 2 & $5891.07 \pm 10.92$ & \\
+$D_1$ & 45.55 & 2 & $5885.02 \pm 10.99$ & \multirow{2}{*}{$6.04 \pm 15.55$} \\
+$D_2$ & 45.61 & 2 & $5891.07 \pm 11.00$ & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -220,7 +220,7 @@ The measured wavelength splitting is $\Delta\lambda = 6.04\ \text{\AA}$, which i
 As calculated in Section 4.1, the average grating constant is $\bar{d} = 16487.8 \pm 30.4\ \text{\AA}$. Converting this to grating density yields $N = \frac{10^7}{\bar{d}} = 606.5 \pm 1.1\ \text{lines/mm}$. Commercial diffraction gratings used in such educational setups are typically rated at nominally $600\ \text{lines/mm}$. Our experimental result is extremely close to this expected value, with a minimal deviation of approximately $1\%$.
 
 \subsection*{Q2: The yellow spectrum of the sodium lamp resolves into two lines in the second order. Measure the angle difference between these two and calculate their wavelength difference.}
-As shown in Table~\ref{tab:doublet}, at diffraction order $m=2$, the two sodium lines are observed at $\theta = 45.55^\circ$ and $\theta = 45.61^\circ$. Using the calibrated $\bar{d}$, the wavelengths are found to be $\lambda_1 = 5885.02\ \text{\AA}$ and $\lambda_2 = 5891.07\ \text{\AA}$. The calculated wavelength difference is $\Delta\lambda = 6.04 \pm 15.43\ \text{\AA}$. This confirms the observation of the Sodium fine structure $D_1$ and $D_2$ doublet.
+As shown in Table~\ref{tab:doublet}, at diffraction order $m=2$, the two sodium lines are observed at $\theta = 45.55^\circ$ and $\theta = 45.61^\circ$. Using the calibrated $\bar{d}$, the wavelengths are found to be $\lambda_1 = 5885.02\ \text{\AA}$ and $\lambda_2 = 5891.07\ \text{\AA}$. The calculated wavelength difference is $\Delta\lambda = 6.04 \pm 15.55\ \text{\AA}$. This confirms the observation of the Sodium fine structure $D_1$ and $D_2$ doublet.
 
 \subsection*{Q3: Using $\bar{d}$, calculate the Rydberg constant and compare it with the theoretical value.}
 The calculated experimental Rydberg constant, averaged over the four visible Balmer lines, is $R_\infty = (1.0907 \pm 0.0021) \times 10^7\ \text{m}^{-1}$. The widely accepted theoretical value is $1.097373 \times 10^7\ \text{m}^{-1}$. The measurement is highly accurate, producing a relative error of only $0.608\%$.
@@ -229,7 +229,7 @@ The calculated experimental Rydberg constant, averaged over the four visible Bal
 The total relative error for $R_\infty$ compared to the theoretical value is $0.608\%$. However, the propagated instrumental uncertainty yields an internal statistical error of $\pm 0.0021 \times 10^7\ \text{m}^{-1}$.
 The primary sources of experimental error include:
 \begin{enumerate}
-    \item \textbf{Instrumental Limits:} The vernier scale limits the angular reading precision to $\delta\theta = 0.01^\circ$, which propagates significantly given the trigonometric relationships.
+    \item \textbf{Instrumental Limits:} The vernier scale limits the angular reading precision to $\delta\theta = 1'$, which propagates significantly given the trigonometric relationships.
     \item \textbf{Alignment Errors:} If the incident beam from the collimator is not perfectly normal (perpendicular) to the grating surface ($\theta_i \neq 0$), an asymmetric systematic offset is introduced to all diffraction angles.
     \item \textbf{Visual Acuity:} Accurately aligning the telescope reticle crosshair perfectly with the center of the diffracted spectral line is subjective and depends on human visual resolution.
 \end{enumerate}
