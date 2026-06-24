@@ -2,7 +2,7 @@ import numpy as np
 import scipy.stats as stats
 
 # Given parameters
-delta_theta_deg = 0.01
+delta_theta_deg = 1.0 / 60.0  # 1 arcminute
 delta_theta_rad = delta_theta_deg * np.pi / 180
 
 print("--- 1. Grating Calibration ---")
