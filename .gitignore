@@ -17,3 +17,4 @@ __pycache__/
 # Folder for unused/archive files
 unused_files/
 sample/
+.obsidian/
