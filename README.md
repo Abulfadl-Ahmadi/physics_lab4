@@ -5,7 +5,7 @@
 **Student:** Abulfadl Ahmadi
 **Semester:** Semester 4 (Spring 2026)
 **Professor:** Dr. Khademi
-**Teaching Assistants:** Yasin Amiri, Sonia
+**Teaching Assistants:** Yasin Amiri, Sonia Seif
 
 ---
 
